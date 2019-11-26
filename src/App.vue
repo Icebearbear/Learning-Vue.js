@@ -1,15 +1,11 @@
 <template>  
   <div id="app">
-    <Apphome v-bind:foods="foods" msg="helloj"></Apphome>
+    <Apphome v-bind:foods="foods"/>
   
 
   <!-- retrieve data from array -->
   <h1 class="text">What have you eat today?</h1> 
-    <ul>
-    <li v-bind:key="food.index" v-for="food of foods">{{food.name}}</li>
-    </ul>
 
-    <!-- add data to array -->
 
   </div>
 </template>
@@ -28,24 +24,18 @@ export default {
 
   },
   data() {
-    msg : "hello"
     return {
       foods : [
-        {id: 1, name : 'cheese'},
-        {id : 2, name: 'choco'},
-        {id: 3, name: 'cream'}
+        {id: 1, name : 'cheese', au: 'lel'},
+        {id : 2, name: 'choco' , au:'lol'},
+        {id: 3, name: 'cream', au:'lal'}
 
         
 
       ]   //array of objects
     }
   },
-  // methods : {
-    // addFood : function () {
-    //   this.foods.push({ value : ''})
-    // }
 
-    // }
   }
 
 

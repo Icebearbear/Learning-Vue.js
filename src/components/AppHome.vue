@@ -5,19 +5,33 @@
     <!-- <h2 class="text">Sally is here to interrogate you!</h2>
     <img id="img" src="../assets/sally.png"> -->
   
-    <h1 class="text">What have you eat today? lololol</h1>
-    <div v-bind:key="food.id" v-for="food in foods"></div>
-    <h3>{{food.name}}</h3>
+    <ul>
+    <li v-bind:key="food.index" v-for="food of foods">{{food.name}}</li>
+    </ul> 
+
+    <input v-model="message" placeholder="type here" :key="index" value="">
     <button type="button" class="submit_button" @click="addFood">Add</button>
-    <h3>{{msg}}</h3>
+ 
+
   
 </div>
 </template>
 
 <script>
+
 export default {
-    name: "app-home",
-    props: ["foods"]
+    name: "Apphome",
+    components: {
+    
+
+    },
+    props: ["foods"],
+    methods: {
+        addFood : function(){
+            // console.log(this.foods)
+            this.foods.push({name: value})
+        }
+    }
   
 }
 </script>
